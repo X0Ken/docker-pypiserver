@@ -1,5 +1,5 @@
-## Pypi in docker
-This project help you start a Pypi
+## Pypi Server in docker
+This project help you start a Pypi Server in a easy way.
 
 ## How to use it
 
@@ -51,3 +51,5 @@ EOF
 python setup.py sdist upload -r local
 ```
 Note: The `<your-name>` and `<your-passwd>` must in `htpasswd.txt`
+
+Now you can enjoy it.
