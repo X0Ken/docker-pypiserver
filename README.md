@@ -16,13 +16,13 @@ htpasswd -sc htpasswd.txt your-name
 ### Start server
 ```bash
 docker build . -t pypiserver
-docker run -p 8000:8000 pypiserver
+docker run -p 8000:8000 --restart always pypiserver
 ```
 
 ### Start server with local storage
 ```bash
 docker build . -t pypiserver
-docker run -p 8000:8000 -v /opt/data:/root/packages pypiserver
+docker run -p 8000:8000 -v /opt/data:/root/packages --restart always pypiserver
 
 # You can use pip download to fast fill storage
 cd /opt/data
