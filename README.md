@@ -16,16 +16,26 @@ htpasswd -sc htpasswd.txt your-name
 ### Start server
 ```bash
 docker build . -t pypiserver
-docker run -p8000:8000 pypiserver
+docker run -p 8000:8000 pypiserver
+```
+
+### Start server with local storage
+```bash
+docker build . -t pypiserver
+docker run -p 8000:8000 -v /opt/data:/root/packages pypiserver
+
+# You can use pip download to fast fill storage
+cd /opt/data
+pip download ...
 ```
 
 ### Download package
 ```bash
 ## Download and Install hosted packages.
-pip install  --extra-index-url http://localhost:8000/simple/ ...
+pip install  -i http://localhost:8000 ...
 
 ## Search hosted packages
-pip search --index http://localhost:8000/simple/ ...
+pip search --index http://localhost:8000 ...
 ```
 
 ### Upload package
