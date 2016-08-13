@@ -7,8 +7,8 @@ COPY docker-entrypoint.sh /root/docker-entrypoint.sh
 RUN chmod +x /root/docker-entrypoint.sh
 COPY htpasswd.txt /root/htpasswd.txt
 
-VOLUME ~/packages
+VOLUME /root/packages
 EXPOSE 8000
 
-ENTRYPOINT ["~/docker-entrypoint.sh"]
+ENTRYPOINT ["/root/docker-entrypoint.sh"]
 CMD ["pypiserver"]
