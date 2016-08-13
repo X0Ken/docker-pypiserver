@@ -4,6 +4,7 @@ RUN pip install pypiserver passlib
 RUN apk add --no-cache bash
 
 COPY docker-entrypoint.sh /root/docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
 COPY htpasswd.txt /root/htpasswd.txt
 
 VOLUME ~/packages
