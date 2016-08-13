@@ -4,7 +4,7 @@ This project help you start a Pypi Server in a easy way.
 ## How to use it
 
 ### Create a password file
-If you do not need to upload, you just `touch htpasswd.txt`, then skip this section.
+If you do not need to upload with pip, you just skip this section.
 ```bash
 # install htpasswd
 apt-get install apache2-utils
